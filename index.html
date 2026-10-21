@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>행정안전부 AI 챔피언 역량인증 | 공공 AX를 이끄는 핵심 인재</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        champGreen: '#10b981',
+                        champBlue: '#2563eb',
+                        champBlack: '#1e293b',
+                    },
+                    fontFamily: {
+                        sans: ['Pretendard', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'Roboto', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+        }
+        .dark .glass-card {
+            background: rgba(30, 41, 59, 0.85);
+        }
+        .blue-glow {
+            box-shadow: 0 0 25px rgba(37, 99, 235, 0.25);
+        }
+        .dark .blue-glow {
+            box-shadow: 0 0 30px rgba(59, 130, 246, 0.35);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-300 font-sans">
+
+    <!-- 상단 네비게이션 헤더 -->
+    <header class="sticky top-0 z-50 glass-card border-b border-slate-200 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center text-white font-bold text-lg shadow-md">
+                    AI
+                </div>
+                <div>
+                    <span class="text-xs font-semibold text-blue-600 dark:text-blue-400 block tracking-wider">행정안전부 공식 인증제도</span>
+                    <h1 class="text-lg font-extrabold tracking-tight">AI 챔피언 (AI Champion)</h1>
+                </div>
+            </div>
+
+            <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-600 dark:text-slate-300">
+                <a href="#overview" class="hover:text-blue-600 dark:hover:text-blue-400 transition">제도 개요</a>
+                <a href="#tiers" class="hover:text-blue-600 dark:hover:text-blue-400 transition">인증 등급 체계</a>
+                <a href="#blue-core" class="text-blue-600 dark:text-blue-400 font-bold flex items-center gap-1">
+                    <i class="fa-solid fa-crown text-amber-500"></i> 왜 '블루'가 핵심인재인가?
+                </a>
+                <a href="#simulator" class="hover:text-blue-600 dark:hover:text-blue-400 transition">역량 진단 & 홍보 생성기</a>
+            </nav>
+
+            <div class="flex items-center gap-3">
+                <button id="themeToggle" class="p-2.5 rounded-xl bg-slate-200/70 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-700 transition" title="다크모드 전환">
+                    <i class="fa-solid fa-moon dark:hidden"></i>
+                    <i class="fa-solid fa-sun hidden dark:inline text-amber-400"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 히어로 섹션 & 핵심 요약 대시보드 -->
+    <section id="overview" class="relative overflow-hidden py-16 md:py-24 bg-gradient-to-b from-blue-50/70 via-white to-slate-50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-4xl mx-auto mb-14">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 text-xs font-bold mb-6 border border-blue-200 dark:border-blue-800">
+                    <i class="fa-solid fa-certificate"></i> 100% 실무 수행평가 기반 국가 공인급 역량 검증
+                </div>
+                <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight mb-6">
+                    단순 지식이 아닌, <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400">현장의 문제를 즉시 해결하는</span><br>
+                    공공 행정의 진짜 AI 리더
+                </h2>
+                <p class="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
+                    <strong>AI 챔피언 역량인증</strong>은 행정안전부가 행정·공공기관 직원을 대상으로 AI 기술을 활용한 <strong>실무 과제 수행(수행평가)</strong>을 통해 문제해결 역량을 인증하는 제도입니다.<br class="hidden sm:inline">
+                    단편적 암기식 시험이 아니라, <strong>인증 다음 날 업무 현장에서 바로 활용할 수 있는 실질적 역량</strong>을 까다롭게 검증합니다.
+                </p>
+            </div>
+
+            <!-- 핵심 대시보드 카드 4종 -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                <div class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 rounded-xl bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-building-columns"></i>
+                    </div>
+                    <p class="text-xs font-bold text-slate-400 uppercase">인증 주관 및 대상</p>
+                    <h3 class="text-xl font-extrabold mt-1">행정안전부 공식 주관</h3>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">전국 행정·공공기관 직원의 실전 AI·데이터 기반 문제해결 역량 공식 검증</p>
+                </div>
+
+                <div class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+                    <p class="text-xs font-bold text-slate-400 uppercase">평가 방식의 혁신</p>
+                    <h3 class="text-xl font-extrabold mt-1">100% 실무 수행평가</h3>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">단순 도구 습득을 넘어 현업의 실제 문제를 해결하는 프로젝트 수행 능력 검증</p>
+                </div>
+
+                <div class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 rounded-xl bg-amber-100 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-users-gear"></i>
+                    </div>
+                    <p class="text-xs font-bold text-slate-400 uppercase">국가적 인재 양성 목표</p>
+                    <h3 class="text-xl font-extrabold mt-1">'25~'30년 2만 명 양성</h3>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">AI 정부 실현과 공공기관 내 AI 프로젝트 확산을 이끌 핵심 인재 기반 마련</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-blue-600 to-indigo-700 text-white p-6 rounded-2xl shadow-lg">
+                    <div class="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <p class="text-xs font-bold text-blue-200 uppercase">인증의 핵심 가치</p>
+                    <h3 class="text-xl font-extrabold mt-1">인증 즉시 현장 투입</h3>
+                    <p class="text-sm text-blue-100 mt-2">인증 다음 날부터 소속 기관의 행정 효율성 향상과 AI 전환(AX)을 즉시 주도</p>
+                </div>
+            </div>
+
+            <!-- 왜 필요한가요 & 기대효과 비교 박스 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white dark:bg-slate-900 p-8 rounded-2xl border border-slate-200 dark:border-slate-800">
+                    <h3 class="text-lg font-bold flex items-center gap-2 mb-4 text-slate-800 dark:text-slate-100">
+                        <span class="w-2.5 h-2.5 rounded-full bg-blue-600"></span> 왜 AI 챔피언이 필요한가요?
+                    </h3>
+                    <ul class="space-y-3 text-sm text-slate-600 dark:text-slate-300">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-blue-600 mt-1"></i>
+                            <span>데이터 기반 행정 혁신은 더 이상 선택이 아닌 <strong>필수 생존 전략</strong>입니다.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-blue-600 mt-1"></i>
+                            <span>AI·데이터 분석 역량 강화가 곧 <strong>공공업무 혁신의 핵심 동력</strong>입니다.</span>
+                        </li>
+                        <li class="flex items-start gap-3 bg-blue-50 dark:bg-blue-950/50 p-3 rounded-xl border border-blue-100 dark:border-blue-900">
+                            <i class="fa-solid fa-arrow-trend-up text-blue-600 mt-1"></i>
+                            <span class="font-semibold text-blue-900 dark:text-blue-200">기존의 'AI 도구 습득·이해 중심'에서 <strong>'현업 적용·문제해결 중심'</strong>으로 패러다임을 완전히 전환합니다.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-white dark:bg-slate-900 p-8 rounded-2xl border border-slate-200 dark:border-slate-800">
+                    <h3 class="text-lg font-bold flex items-center gap-2 mb-4 text-slate-800 dark:text-slate-100">
+                        <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span> 인증 인재가 만들어내는 기대 효과
+                    </h3>
+                    <ul class="space-y-3 text-sm text-slate-600 dark:text-slate-300">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-rocket text-emerald-500 mt-1"></i>
+                            <span><strong>행정 효율성 극대화:</strong> 반복 업무를 자동화하고 데이터 기반 정책 수립을 활성화합니다.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-network-wired text-emerald-500 mt-1"></i>
+                            <span><strong>조직 내 혁신 확산:</strong> 공공기관 내 AI 프로젝트를 자체 확산하고 실질적 행정 혁신을 촉진합니다.</span>
+                        </li>
+                        <li class="flex items-start gap-3 bg-emerald-50 dark:bg-emerald-950/50 p-3 rounded-xl border border-emerald-100 dark:border-emerald-900">
+                            <i class="fa-solid fa-award text-emerald-600 mt-1"></i>
+                            <span class="font-semibold text-emerald-900 dark:text-emerald-200"><strong>AI 정부 실현의 중추:</strong> 외주 용역에만 의존하지 않고 기관 스스로 AI 전환을 이끄는 핵심 인재 기반을 구축합니다.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 탭 기반 상세 콘텐츠: 인증 등급 체계 -->
+    <section id="tiers" class="py-16 bg-white dark:bg-slate-900 border-y border-slate-200 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-widest">Certification Tiers</span>
+                <h2 class="text-3xl font-extrabold mt-2 mb-4">AI 챔피언 인증 등급 체계</h2>
+                <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base">
+                    역량 수준과 역할에 따라 <strong>그린(Green) · 블루(Blue) · 블랙(Black)</strong> 3단계 등급으로 운영되며, 각 등급은 철저한 실무 검증을 거칩니다.
+                </p>
+            </div>
+
+            <!-- 인터랙티브 탭 버튼 -->
+            <div class="flex flex-wrap justify-center gap-3 mb-10">
+                <button onclick="switchTierTab('all')" id="tab-all" class="tier-tab px-5 py-2.5 rounded-xl text-sm font-bold bg-slate-900 text-white dark:bg-white dark:text-slate-900 transition">
+                    한눈에 비교하기
+                </button>
+                <button onclick="switchTierTab('green')" id="tab-green" class="tier-tab px-5 py-2.5 rounded-xl text-sm font-bold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-emerald-500 hover:text-white transition">
+                    🌱 그린 (Green) : 실무 기획자
+                </button>
+                <button onclick="switchTierTab('blue')" id="tab-blue" class="tier-tab px-5 py-2.5 rounded-xl text-sm font-bold bg-blue-600 text-white shadow-md hover:bg-blue-700 transition">
+                    💎 블루 (Blue) : 기관 핵심 실행 리더 ★
+                </button>
+                <button onclick="switchTierTab('dual')" id="tab-dual" class="tier-tab px-5 py-2.5 rounded-xl text-sm font-bold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-indigo-600 hover:text-white transition">
+                    🔥 그린 + 블루 복수 인증의 가치
+                </button>
+            </div>
+
+            <!-- 탭 콘텐츠 영역 -->
+            <div id="tier-content-all" class="tier-panel grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+                <!-- 그린 등급 -->
+                <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/60 dark:bg-slate-800/40 p-7 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full text-xs font-extrabold bg-emerald-100 text-emerald-800 dark:bg-emerald-900/50 dark:text-emerald-300">GREEN LEVEL (활용)</span>
+                            <i class="fa-solid fa-lightbulb text-2xl text-emerald-500"></i>
+                        </div>
+                        <h3 class="text-2xl font-extrabold mb-2">그린 챔피언</h3>
+                        <p class="text-sm font-semibold text-emerald-600 dark:text-emerald-400 mb-4">노코드 기반 AI 전환 실무 기획자</p>
+                        <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+                            현업의 문제점을 발굴하고, <strong>AI 전환 아이디어를 실제 정책·서비스 기획안으로 구체화</strong>하는 실무 기획 인재입니다.
+                        </p>
+                        <div class="space-y-2.5 text-xs text-slate-600 dark:text-slate-400 border-t border-slate-200 dark:border-slate-700 pt-4">
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> 노코드(No-Code) AI 도구 실무 적용</div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> 행정 서비스 및 정책 기획안 도출</div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> 부서 내 일상 업무 효율화 선도</div>
+                        </div>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-200 dark:border-slate-700 text-xs font-semibold text-slate-500">
+                        역할 정의: 현업 아이디어 발굴 및 정책 기획
+                    </div>
+                </div>
+
+                <!-- 블루 등급 (강조) -->
+                <div class="rounded-2xl border-2 border-blue-600 dark:border-blue-500 bg-white dark:bg-slate-900 p-7 flex flex-col justify-between relative blue-glow transform lg:-translate-y-2">
+                    <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-xs font-extrabold shadow">
+                        기관의 AI 전환(AX) 핵심 중추 인재
+                    </div>
+                    <div>
+                        <div class="flex items-center justify-between mb-4 mt-2">
+                            <span class="px-3 py-1 rounded-full text-xs font-extrabold bg-blue-100 text-blue-800 dark:bg-blue-900/60 dark:text-blue-300">BLUE LEVEL (중급·기술실행)</span>
+                            <i class="fa-solid fa-microchip text-2xl text-blue-600 dark:text-blue-400"></i>
+                        </div>
+                        <h3 class="text-2xl font-extrabold mb-2 text-blue-600 dark:text-blue-400">블루 챔피언</h3>
+                        <p class="text-sm font-semibold text-slate-800 dark:text-slate-200 mb-4">기관 AI 전환 사업을 기획·실행하는 기술 리더</p>
+                        <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+                            단순 활용을 넘어 <strong>IT 담당, 개발·모델링 기반의 기술력</strong>으로 기관의 AI 전환 사업을 직접 기획하고 실제로 구현·실행하는 <strong>실행 중심 핵심 인재</strong>입니다.
+                        </p>
+                        <div class="space-y-2.5 text-xs text-slate-700 dark:text-slate-200 border-t border-blue-100 dark:border-slate-800 pt-4 font-medium">
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-star text-blue-600"></i> <strong>개발·데이터 모델링 기반</strong> 실전 문제 해결</div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-star text-blue-600"></i> 기관 단위 <strong>AI 전환(AX) 핵심 사업 기획 및 실행</strong></div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-star text-blue-600"></i> 행정 도메인 지식과 IT 엔지니어링의 완벽한 결합</div>
+                        </div>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-blue-100 dark:border-slate-800 text-xs font-bold text-blue-600 dark:text-blue-400 flex items-center justify-between">
+                        <span>역할 정의: 기관의 AI 전환 사업 총괄 기획·실행</span>
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+                </div>
+
+                <!-- 블랙 등급 -->
+                <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/60 dark:bg-slate-800/40 p-7 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full text-xs font-extrabold bg-slate-200 text-slate-800 dark:bg-slate-700 dark:text-slate-200">BLACK LEVEL (고급)</span>
+                            <i class="fa-solid fa-chess-king text-2xl text-slate-700 dark:text-slate-300"></i>
+                        </div>
+                        <h3 class="text-2xl font-extrabold mb-2">블랙 챔피언</h3>
+                        <p class="text-sm font-semibold text-slate-500 dark:text-slate-400 mb-4">AI 챔피언 고급과정 인증자 (2026년 신설)</p>
+                        <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+                            2026년 신설되는 최고급 과정으로, 고도화된 AI 아키텍처 설계 및 범정부 차원의 고난도 과제를 리딩하는 과정입니다.
+                        </p>
+                        <div class="space-y-2.5 text-xs text-slate-600 dark:text-slate-400 border-t border-slate-200 dark:border-slate-700 pt-4">
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-check text-slate-500"></i> 2026년 신설 고급과정 이수 및 인증</div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-check text-slate-500"></i> 심화 AI 기술 및 거버넌스 고도화</div>
+                        </div>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-200 dark:border-slate-700 text-xs font-semibold text-slate-500">
+                        역할 정의: 고급과정 인증 전문가 (2026년 신설)
+                    </div>
+                </div>
+            </div>
+
+            <!-- 개별 탭 선택 시 나타나는 상세 설명 박스 -->
+            <div id="tier-detail-box" class="hidden mt-8 p-8 rounded-2xl bg-slate-50 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700">
+                <div id="tier-detail-content"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 핵심 섹션: 왜 '블루(Blue)' 인증자가 기관의 대체불가 핵심 인재인가? -->
+    <section id="blue-core" class="py-20 bg-gradient-to-b from-slate-900 via-blue-950 to-slate-900 text-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="px-4 py-1.5 rounded-full bg-blue-500/20 border border-blue-400/30 text-blue-300 text-xs font-extrabold uppercase tracking-widest">
+                    Core Talent Spotlight
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold mt-4 mb-6 leading-tight">
+                    왜 <span class="text-blue-400">'블루(Blue) 등급'</span> 보유자가<br>
+                    우리 기관의 가장 강력한 핵심 자산인가?
+                </h2>
+                <p class="text-slate-300 text-base leading-relaxed">
+                    공공기관에 AI를 단순 체험해 본 직원은 많지만, <strong>실제 데이터 모델링과 개발을 통해 기관의 AI 전환 사업을 직접 기획하고 구현해낼 수 있는 공무원·공공기관 직원</strong>은 극소수에 불과합니다.
+                </p>
+            </div>
+
+            <!-- 4대 핵심 가치 카드 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-14">
+                <div class="bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-2xl hover:border-blue-400/50 transition">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-blue-600 flex items-center justify-center text-xl font-bold">01</div>
+                        <h3 class="text-xl font-extrabold">기획을 넘어 '실제 구현(개발·모델링)'까지 완수하는 실전가</h3>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        블루 등급은 단순 노코드 도구 활용 수준이 아닙니다. <strong>데이터 전처리, 알고리즘·모델링, 시스템 개발 기반의 수행평가</strong>를 통과해야만 주어지는 등급으로, 아이디어를 문서에 머물게 하지 않고 실제 작동하는 설루션으로 구현해내는 기술 실행 리더입니다.
+                    </p>
+                </div>
+
+                <div class="bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-2xl hover:border-blue-400/50 transition">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-blue-600 flex items-center justify-center text-xl font-bold">02</div>
+                        <h3 class="text-xl font-extrabold">행정 현장 이해도 + IT 기술력을 동시에 갖춘 '브릿지 리더'</h3>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        외부 개발사는 공공행정의 법령과 절차를 모르고, 일반 행정직은 AI 기술의 구조를 모릅니다. 블루 챔피언은 <strong>현업의 고충(Pain Point)을 정확히 짚어내어 기술적 언어로 설계하고 직접 실행</strong>할 수 있어, 예산 낭비 없는 성공적인 AI 사업을 이끕니다.
+                    </p>
+                </div>
+
+                <div class="bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-2xl hover:border-blue-400/50 transition">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-blue-600 flex items-center justify-center text-xl font-bold">03</div>
+                        <h3 class="text-xl font-extrabold">그린(기획) + 블루(기술실행) 복수 인증 시 '완전체 올라운더'</h3>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        그린과 블루는 요구 수준과 영역이 달라 두 등급을 모두 취득할 의무가 없습니다. 그럼에도 <strong>순차 참여를 통해 그린과 블루를 모두 획득한 인재</strong>는 <strong>'정책·서비스 기획력(Green)'과 '개발·모델링 기술 실행력(Blue)'을 모두 공인받은 최상위 핵심 인재</strong>입니다.
+                    </p>
+                </div>
+
+                <div class="bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-2xl hover:border-blue-400/50 transition">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-blue-600 flex items-center justify-center text-xl font-bold">04</div>
+                        <h3 class="text-xl font-extrabold">기관의 대외 위상 제고 및 정부 혁신 평가의 핵심 동력</h3>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        행정안전부가 추진하는 'AI 정부 실현('25~'30년 핵심인재 양성)' 기조에 맞춰, 기관 내 블루 챔피언의 존재는 곧 <strong>우리 기관이 자체적인 AI 전환(AX) 추진 역량을 보유하고 있음을 입증하는 가장 확실한 지표</strong>가 됩니다.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 일반 직원 vs 그린 vs 블루 역량 비교 매트릭스 -->
+            <div class="bg-white/10 backdrop-blur-md rounded-2xl border border-white/15 overflow-hidden">
+                <div class="px-6 py-4 bg-white/5 border-b border-white/10 flex items-center justify-between">
+                    <h4 class="font-bold text-sm sm:text-base flex items-center gap-2">
+                        <i class="fa-solid fa-chart-simple text-blue-400"></i> 직무 역량 스펙트럼 비교
+                    </h4>
+                    <span class="text-xs text-blue-300">행정안전부 인증 기준 기반</span>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-sm">
+                        <thead class="bg-white/5 text-slate-300 text-xs uppercase">
+                            <tr>
+                                <th class="py-3.5 px-6">역량 항목</th>
+                                <th class="py-3.5 px-6">일반 AI 교육 이수자</th>
+                                <th class="py-3.5 px-6 text-emerald-300">AI 챔피언 [그린]</th>
+                                <th class="py-3.5 px-6 text-blue-300 font-extrabold bg-blue-600/20">AI 챔피언 [블루 / 그린+블루]</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-white/10 text-slate-200">
+                            <tr>
+                                <td class="py-3.5 px-6 font-semibold">검증 방식</td>
+                                <td class="py-3.5 px-6 text-slate-400">단순 출석·이론 수강</td>
+                                <td class="py-3.5 px-6">실무 기획 과제 수행평가</td>
+                                <td class="py-3.5 px-6 font-bold bg-blue-600/10 text-white">개발·모델링 실전 프로젝트 수행평가</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3.5 px-6 font-semibold">주요 활용 기술</td>
+                                <td class="py-3.5 px-6 text-slate-400">기성 챗봇 단순 질의응답</td>
+                                <td class="py-3.5 px-6">노코드(No-Code) 기반 기획</td>
+                                <td class="py-3.5 px-6 font-bold bg-blue-600/10 text-white">데이터 모델링, 코딩/개발, AI 시스템 구현</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3.5 px-6 font-semibold">기관 내 역할</td>
+                                <td class="py-3.5 px-6 text-slate-400">개인 업무 보조 활용</td>
+                                <td class="py-3.5 px-6">AI 전환 정책·서비스 실무 기획자</td>
+                                <td class="py-3.5 px-6 font-bold bg-blue-600/10 text-blue-300">기관 AI 전환(AX) 사업 총괄 기획 및 기술 실행 핵심 인재</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 인터랙티브 시뮬레이터 & 기관 홍보 문구 생성기 -->
+    <section id="simulator" class="py-16 bg-slate-50 dark:bg-slate-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                
+                <!-- 1. 우리 기관 AI 전환(AX) 과제 매칭 시뮬레이터 -->
+                <div class="bg-white dark:bg-slate-900 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 text-xs font-bold mb-3">
+                        Interactive Simulator 01
+                    </div>
+                    <h3 class="text-2xl font-extrabold mb-2">상황별 필요 챔피언 등급 시뮬레이터</h3>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 mb-6">
+                        기관에서 해결하고자 하는 업무 과제를 선택하면, 어떤 인증 인재가 왜 필요한지 즉시 분석해 드립니다.
+                    </p>
+
+                    <div class="space-y-3 mb-6">
+                        <label class="block text-xs font-bold text-slate-500 uppercase">해결하고 싶은 기관의 과제 선택</label>
+                        <select id="taskSelector" onchange="runSimulator()" class="w-full p-3.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-sm font-semibold focus:ring-2 focus:ring-blue-600 outline-none">
+                            <option value="case1">🏢 기관 맞춤형 AI 전환(AX) 신규 사업 기획 및 자체 프로토타입 개발</option>
+                            <option value="case2">📊 대용량 행정 데이터 분석·모델링 기반 정책 의사결정 시스템 구축</option>
+                            <option value="case3">💡 부서 내 반복 민원·행정 업무를 노코드 AI로 빠르게 개선하는 기획안 작성</option>
+                            <option value="case4">🚀 아이디어 발굴(기획)부터 실제 프로그램 구현(실행)까지 원스톱 행정 혁신</option>
+                        </select>
+                    </div>
+
+                    <div id="simResult" class="p-6 rounded-xl bg-blue-50/80 dark:bg-slate-800/80 border border-blue-200 dark:border-slate-700">
+                        <!-- JS로 초기 렌더링 -->
+                    </div>
+                </div>
+
+                <!-- 2. 핵심 인재 소개 / 보도자료·인사추천 문구 생성기 -->
+                <div class="bg-white dark:bg-slate-900 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300 text-xs font-bold mb-3">
+                            Interactive Generator 02
+                        </div>
+                        <h3 class="text-2xl font-extrabold mb-2">핵심 인재 가치 소개 문구 생성기</h3>
+                        <p class="text-sm text-slate-600 dark:text-slate-400 mb-6">
+                            기관 내부 보고서, 혁신 사례 발표, 홍보 자료 등에 바로 활용할 수 있는 맞춤형 소개 문구를 생성합니다.
+                        </p>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-500 mb-1">보유 인증 기준</label>
+                                <select id="genBadge" onchange="generateCopy()" class="w-full p-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-sm font-semibold">
+                                    <option value="dual">그린 + 블루 복수 인증자 (기획+실행 완전체)</option>
+                                    <option value="blue">블루(Blue) 등급 인증자 (기술 실행 핵심리더)</option>
+                                    <option value="green">그린(Green) 등급 인증자 (실무 기획자)</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-500 mb-1">활용 목적 (문서 톤앤매너)</label>
+                                <select id="genPurpose" onchange="generateCopy()" class="w-full p-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-sm font-semibold">
+                                    <option value="exec">기관장·간부 보고용 (핵심 인재 강조)</option>
+                                    <option value="pr">보도자료·대외 홍보용 (기관 혁신 역량 부각)</option>
+                                    <option value="intro">동료·타 부서 협업 소개용 (이해하기 쉬운 설명)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="relative">
+                            <textarea id="generatedText" rows="5" readonly class="w-full p-4 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-sm text-slate-800 dark:text-slate-200 leading-relaxed resize-none focus:outline-none"></textarea>
+                        </div>
+                    </div>
+
+                    <button onclick="copyGeneratedText()" class="mt-4 w-full py-3.5 px-6 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm shadow transition flex items-center justify-center gap-2">
+                        <i class="fa-regular fa-copy"></i> 생성된 소개 문구 클립보드 복사하기
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 공식 FAQ 아코디언 섹션 -->
+    <section class="py-16 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <h2 class="text-2xl sm:text-3xl font-extrabold">자주 묻는 질문 (FAQ)</h2>
+                <p class="text-sm text-slate-500 mt-2">행정안전부 AI 챔피언 역량인증 공식 안내 기준</p>
+            </div>
+
+            <div class="space-y-4">
+                <div class="border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden">
+                    <button onclick="toggleFaq(1)" class="w-full p-5 text-left font-bold flex items-center justify-between bg-slate-50/50 dark:bg-slate-800/40 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+                        <span>Q. AI 챔피언 인증 제도란 무엇인가요?</span>
+                        <i id="faq-icon-1" class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+                    </button>
+                    <div id="faq-body-1" class="p-5 text-sm text-slate-600 dark:text-slate-300 border-t border-slate-200 dark:border-slate-800 leading-relaxed">
+                        정부의 AI 대전환을 위해 <strong>공공행정 분야의 문제를 AI·데이터 기반으로 해결하는 실무형 인재를 양성·인증하는 제도</strong>입니다. 단순 사용을 넘어, <strong>현장에서 발생하는 문제를 실제로 해결하는 능력을 검증</strong>하는 데 목적이 있습니다.
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden">
+                    <button onclick="toggleFaq(2)" class="w-full p-5 text-left font-bold flex items-center justify-between bg-slate-50/50 dark:bg-slate-800/40 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+                        <span>Q. 인증 등급은 어떻게 나뉘며, 블루 등급의 특징은 무엇인가요?</span>
+                        <i id="faq-icon-2" class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+                    </button>
+                    <div id="faq-body-2" class="p-5 text-sm text-slate-600 dark:text-slate-300 border-t border-slate-200 dark:border-slate-800 leading-relaxed">
+                        그린·블루·블랙 세 가지 등급으로 운영합니다.<br>
+                        • <strong>그린:</strong> AI 전환 아이디어를 정책·서비스 기획안으로 구체화하는 실무 기획자 (노코드 기반)<br>
+                        • <strong class="text-blue-600 dark:text-blue-400">블루: 기관의 AI 전환 사업을 기획·실행하는 실행 중심 역할 (IT 담당, 개발·모델링 기반)</strong><br>
+                        • <strong>블랙:</strong> AI 챔피언 고급과정 인증자에게 부여 (2026년 신설)
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden">
+                    <button onclick="toggleFaq(3)" class="w-full p-5 text-left font-bold flex items-center justify-between bg-slate-50/50 dark:bg-slate-800/40 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+                        <span>Q. 그린·블루 인증을 둘 다 취득할 수 있나요? 복수 인증자는 어떤 의미인가요?</span>
+                        <i id="faq-icon-3" class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+                    </button>
+                    <div id="faq-body-3" class="p-5 text-sm text-slate-600 dark:text-slate-300 border-t border-slate-200 dark:border-slate-800 leading-relaxed">
+                        <strong>그린(활용)·블루(중급)는 수준이 다르며</strong> 두 등급을 모두 취득할 의무는 없습니다. 다만 <strong>아이디어 기획과 기술 실행 역량을 모두 경험하려면 순차 참여로 복수 인증</strong>을 받을 수 있습니다. 즉, 두 등급을 모두 보유한 직원은 행정 기획력과 개발·모델링 실행력을 동시에 검증받은 <strong>기관 내 최정예 핵심 인재</strong>입니다.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 푸터 -->
+    <footer class="py-10 bg-slate-900 text-slate-400 text-center text-xs border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4">
+            <p class="font-bold text-slate-200 mb-1">행정안전부 AI 챔피언 역량인증 안내 포털</p>
+            <p>본 페이지는 공공기관 내 AI 챔피언(Green·Blue) 인증 제도의 이해를 돕고 핵심 인재의 가치를 알리기 위해 제작되었습니다.</p>
+        </div>
+    </footer>
+
+    <!-- 클립보드 복사 토스트 알림 -->
+    <div id="toast" class="fixed bottom-6 right-6 transform translate-y-20 opacity-0 transition-all duration-300 z-50 bg-slate-900 dark:bg-white text-white dark:text-slate-900 px-5 py-3 rounded-xl shadow-xl font-bold text-sm flex items-center gap-2">
+        <i class="fa-solid fa-circle-check text-emerald-400 dark:text-emerald-600"></i>
+        <span id="toastMsg">클립보드에 복사되었습니다!</span>
+    </div>
+
+    <script>
+        // 다크 모드 토글
+        const themeToggle = document.getElementById('themeToggle');
+        themeToggle.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+        });
+
+        // 탭 전환 기능
+        const tierDetails = {
+            green: {
+                title: "🌱 그린(Green) 등급 : 노코드 기반 실무 기획의 달인",
+                desc: "현업에서 발생하는 다양한 행정 문제를 AI 관점으로 재정의하고, 코딩 없이도 활용 가능한 노코드(No-Code) 도구를 접목하여 즉시 실행 가능한 정책·서비스 기획안으로 구체화하는 핵심 기획 인재입니다."
+            },
+            blue: {
+                title: "💎 블루(Blue) 등급 : 기관의 AI 전환(AX)을 실제로 구현하는 핵심 기술 리더",
+                desc: "단순히 아이디어를 내는 수준을 넘어, 실제 개발·데이터 모델링 기술을 바탕으로 기관의 AI 전환 사업을 주도적으로 기획하고 실행하는 중추적 인재입니다. 수행평가를 통해 검증된 실전 개발·모델링 역량으로 기관의 예산 절감과 행정 혁신을 직접 견인합니다."
+            },
+            dual: {
+                title: "🔥 그린(기획) + 블루(기술실행) 복수 인증 : 기획과 개발을 겸비한 대체불가 올라운더",
+                desc: "그린(활용)과 블루(중급)는 요구되는 역량의 차원이 달라 의무적으로 모두 취득할 필요가 없습니다. 그럼에도 순차 참여를 통해 두 등급을 모두 획득한 인재는 '현업 정책·서비스 기획력'과 '고난도 개발·모델링 실행력'을 완벽하게 겸비한 기관 최고의 AI 핵심 인재입니다."
+            }
+        };
+
+        function switchTierTab(tab) {
+            const detailBox = document.getElementById('tier-detail-box');
+            const detailContent = document.getElementById('tier-detail-content');
+            
+            if (tab === 'all') {
+                detailBox.classList.add('hidden');
+            } else {
+                detailBox.classList.remove('hidden');
+                const info = tierDetails[tab];
+                detailContent.innerHTML = `
+                    <h4 class="text-xl font-extrabold text-blue-600 dark:text-blue-400 mb-2">${info.title}</h4>
+                    <p class="text-sm sm:text-base text-slate-700 dark:text-slate-300 leading-relaxed">${info.desc}</p>
+                `;
+            }
+        }
+
+        // 시뮬레이터 데이터 및 실행
+        const simData = {
+            case1: {
+                badge: "필수 핵심 인재: 💎 블루(Blue) 챔피언",
+                title: "기관의 AI 전환 사업을 직접 기획·실행할 기술 리더가 필요합니다.",
+                desc: "단순 아이디어 차원을 넘어 실제 기관의 AI 전환(AX) 사업을 설계하고 기술적 타당성을 검증하며 프로토타입까지 구현하려면, IT 담당 및 개발·모델링 기반 수행평가를 통과한 '블루 등급' 인재가 반드시 중심을 잡아야 합니다."
+            },
+            case2: {
+                badge: "필수 핵심 인재: 💎 블루(Blue) 챔피언",
+                title: "데이터 모델링 및 알고리즘 구현 역량이 검증된 전문가 영역입니다.",
+                desc: "공공 데이터를 정제하고 예측·분류 모델링을 수행하여 데이터 기반 정책 수립을 활성화하는 과제는 블루 챔피언의 핵심 전문 분야입니다."
+            },
+            case3: {
+                badge: "추천 인재: 🌱 그린(Green) 챔피언",
+                title: "노코드 기반의 신속한 서비스·정책 기획이 효과적입니다.",
+                desc: "복잡한 시스템 개발 전 단계에서 노코드 AI 도구를 활용해 현업의 아이디어를 정책·서비스 기획안으로 빠르게 구체화하는 데에는 그린 등급 인재가 탁월한 역량을 발휘합니다."
+            },
+            case4: {
+                badge: "최고의 파트너: 🔥 그린 + 블루 복수 인증 챔피언",
+                title: "기획(Green)부터 개발·모델링 실행(Blue)까지 원스톱 해결!",
+                desc: "현업의 언어로 정책을 기획하는 능력과 엔지니어의 언어로 시스템을 직접 개발·모델링하는 능력을 모두 공인받은 복수 인증 인재가 투입되면, 부서 간 소통 비용 없이 가장 완벽하고 빠른 행정 혁신이 이루어집니다."
+            }
+        };
+
+        function runSimulator() {
+            const val = document.getElementById('taskSelector').value;
+            const item = simData[val];
+            document.getElementById('simResult').innerHTML = `
+                <span class="inline-block px-3 py-1 rounded-full bg-blue-600 text-white text-xs font-extrabold mb-3">${item.badge}</span>
+                <h4 class="text-lg font-extrabold text-slate-900 dark:text-white mb-2">${item.title}</h4>
+                <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">${item.desc}</p>
+            `;
+        }
+
+        // 문구 생성기 로직
+        const copyTemplates = {
+            dual: {
+                exec: "[핵심 인재 보고] 행정안전부 주관 'AI 챔피언' 역량인증에서 '그린(노코드 기반 정책·서비스 기획)'과 '블루(개발·모델링 기반 AI 전환 사업 기획·실행)' 등급을 순차 참여로 모두 획득한 검증된 핵심 인재입니다. 단순 지식 시험이 아닌 100% 실무 수행평가를 통해 기획력과 기술 구현력을 동시에 공인받아, 우리 기관의 AI 전환(AX) 핵심 사업을 자체 주도할 수 있는 중추적 자원입니다.",
+                pr: "우리 기관은 행정안전부가 공인하는 'AI 챔피언' 그린 및 블루 등급 복수 인증 인재를 보유하여 공공 AI 대전환을 선도하고 있습니다. 특히 블루 등급은 실제 개발·모델링 역량을 바탕으로 기관의 AI 전환 사업을 기획·실행하는 핵심 등급으로, 아이디어 기획부터 기술 구현까지 현장의 문제를 즉시 해결하는 데이터 기반 스마트 행정을 실현하고 있습니다.",
+                intro: "행정안전부 AI 챔피언 '그린(실무 기획)'과 '블루(개발·모델링 기술 실행)' 두 가지 등급을 모두 인증받은 AI 전환 전문가입니다. 업무 현장의 불편함을 찾아내어 기획안으로 만드는 것부터, 실제 코딩과 데이터 모델링으로 자동화·AI 설루션을 구현하는 것까지 전 과정을 도울 수 있는 우리 기관의 든든한 AI 핵심 리더입니다."
+            },
+            blue: {
+                exec: "[핵심 인재 보고] 행정안전부 'AI 챔피언' 중급 과정인 '블루(Blue)' 등급을 획득한 기관의 핵심 기술·실행 인재입니다. 블루 등급은 개발·모델링 기반의 까다로운 실무 수행평가를 통과해야만 부여되며, 우리 기관의 AI 전환(AX) 사업을 직접 기획하고 실행할 수 있는 대체 불가능한 실전 역량을 보유하고 있습니다.",
+                pr: "행정안전부 주관 실무형 AI 역량 검증 제도인 'AI 챔피언'에서 기관의 AI 전환 사업을 기획·실행하는 '블루(Blue)' 등급 인증 인재를 배출하며 데이터 기반 행정 혁신의 기틀을 마련했습니다.",
+                intro: "단순히 AI 도구를 사용하는 수준을 넘어, 실제 프로그램 개발과 데이터 모델링을 통해 우리 기관의 AI 전환 사업을 기획하고 구현하는 'AI 챔피언 블루 등급' 핵심 인재입니다."
+            },
+            green: {
+                exec: "[인재 보고] 행정안전부 'AI 챔피언' 그린(Green) 등급 인증을 통해 노코드 기반의 AI 전환 아이디어를 실제 정책·서비스 기획안으로 구체화하는 실무 기획 역량을 공식 검증받았습니다.",
+                pr: "현장의 문제를 AI 기반으로 해결하는 행정안전부 'AI 챔피언 그린 등급' 실무 기획 인재를 통해 일상 행정의 효율성을 높이고 있습니다.",
+                intro: "노코드 AI 기술을 활용하여 부서의 현안과 아이디어를 스마트한 정책·서비스 기획안으로 구체화하는 'AI 챔피언 그린 등급' 실무 기획자입니다."
+            }
+        };
+
+        function generateCopy() {
+            const badge = document.getElementById('genBadge').value;
+            const purpose = document.getElementById('genPurpose').value;
+            document.getElementById('generatedText').value = copyTemplates[badge][purpose];
+        }
+
+        function copyGeneratedText() {
+            const text = document.getElementById('generatedText').value;
+            navigator.clipboard.writeText(text).then(() => {
+                showToast("소개 문구가 클립보드에 복사되었습니다!");
+            });
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastMsg').innerText = msg;
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 2500);
+        }
+
+        function toggleFaq(idx) {
+            const body = document.getElementById(`faq-body-${idx}`);
+            const icon = document.getElementById(`faq-icon-${idx}`);
+            body.classList.toggle('hidden');
+            icon.classList.toggle('rotate-180');
+        }
+
+        // 초기 실행
+        window.addEventListener('DOMContentLoaded', () => {
+            runSimulator();
+            generateCopy();
+        });
+    </script>
+</body>
+</html>
